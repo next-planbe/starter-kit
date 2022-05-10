@@ -1,0 +1,29 @@
+{
+  "name": "starter-kit",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mantine/core": "^4.2.2",
+    "@mantine/form": "^4.2.2",
+    "@mantine/hooks": "^4.2.2",
+    "@mantine/next": "^4.2.2",
+    "@mantine/notifications": "^4.2.2",
+    "immer": "^9.0.12",
+    "next": "12.1.6",
+    "ramda": "^0.28.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "tabler-icons-react": "^1.47.0",
+    "zustand": "^4.0.0-rc.1"
+  },
+  "devDependencies": {
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6"
+  }
+}

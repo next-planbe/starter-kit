@@ -1,13 +1,14 @@
-import { Button, Text, Title } from "@mantine/core"
-import Head from "next/head"
+import { Text } from "@mantine/core"
+import { useSession } from "next-auth/react"
 import { useEffect } from "react"
 import { DefaultContent } from "../components/home"
 import { useLayout } from "../features/Layout/useLayout"
+
 export default function Dashboard(props) {
   const content = useLayout(state => state.pageProps.content.children)
   const title = useLayout(state => state.pageProps.content.title)
   const setContent = useLayout(state => state.setContent)
-  const toggleBurgerOpen = useLayout(state => state.toggleBurgerOpen)
+  const { data: session } = useSession()
 
   useEffect(() => {
     setContent({
@@ -17,8 +18,7 @@ export default function Dashboard(props) {
   }, [])
   return (
     <DefaultContent title={title}>
-      {content}
-      <Button onClick={toggleBurgerOpen}>Click me</Button>
+      {session ? content : "Not allowed"}
     </DefaultContent>
   )
 }

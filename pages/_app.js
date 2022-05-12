@@ -3,9 +3,9 @@ import Head from "next/head"
 import { ColorSchemeProvider, MantineProvider } from "@mantine/core"
 import { NotificationsProvider } from "@mantine/notifications"
 import LayoutProvider from "../features/Layout/LayoutProvider"
-import { useLayout } from "../features/Layout/useLayout"
+import { SessionProvider } from "next-auth/react"
 
-function MyApp({ Component, ...props }) {
+function MyApp({ Component, session, ...props }) {
   const [colorScheme, setColorScheme] = useState(props.colorScheme)
 
   const toggleColorScheme = val => {
@@ -34,8 +34,10 @@ function MyApp({ Component, ...props }) {
           withNormalizeCSS
         >
           <NotificationsProvider>
-            <LayoutProvider header={{ brand: "marauder" }}>
-              <Component {...props} />
+            <LayoutProvider>
+              <SessionProvider session={session}>
+                <Component {...props} />
+              </SessionProvider>
             </LayoutProvider>
           </NotificationsProvider>
         </MantineProvider>

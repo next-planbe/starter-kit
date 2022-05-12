@@ -1,15 +1,15 @@
 import { Navbar } from "@mantine/core"
 
 /**
- * # AppNavbar
- * Responsive layout for the navigation-bar
+ * ## AppNavbar = props => component
  *
- * @param {React.Component} {children} React component to render as main-content
- * @param {React.Component[]} {nav} An Array of up to 3 React components,
- *                                  each for on the 3 navbar-sections
- * @param {String} {title} The name for the app
- * @param {Boolean} {burgerOpen} Wether the burgers state is opened or not
- * @param {Function} {clickBurger} EventHandler for clicking the burger
+ * props :
+ * @param {React.Component} {{top}}: Navigation-header
+ * @param {React.Component} {{bottom}}: Navigation-footer
+ * @param {React.Component} {{main}}: Main Navigation-content
+ * @param {Boolean} {{opened}}: wether the navbar is open or not
+ * @param {String} {{id}}: html-id for the main-nav-element
+ *
  * @returns {React.Component} Full App-View-Component. Best used in _app.js
  */
 

@@ -6,18 +6,12 @@ import AppNavbar from "./Navigation/AppNavbar"
 import DefaultSection from "./Navigation/DefaultSection"
 
 /**
- * # Layout = props => component
+ * ## Layout = props => component
  * Toplevel-layout-component
  * @param {React.Component} {children} React component to render as main-content
- * @param {Object} {{nav}} Navigation-content =>
- *  # nav : {
- *  @param {React.Component} {top}: Navigation-header
- *  @param {React.Component} {bottom}: Navigation-footer
- *  @param {React.Component} {main}: Main Navigation-content
- * }
- * @param {React.Component} {brand} The apps brand
- * @param {Boolean} {burgerOpen} Wether the burgers state is opened or not
- * @param {Function} {clickBurger} EventHandler for clicking the burger
+ * @param {Object} {nav} Navigation-content
+ * @param {Object} {header} Header-controlls
+ *
  * @returns {React.Component} Full App-View-Component. Best used in _app.js
  */
 

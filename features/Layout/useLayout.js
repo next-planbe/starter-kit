@@ -1,6 +1,13 @@
 import create from "zustand"
 import { immer } from "zustand/middleware/immer"
-
+/**
+ * ## useLayout = pointer => statePiece
+ *
+ * state-store for the layout-component
+ * @param {Function} pointer is a function over state, returning the wanted piece of state
+ *
+ * @returns {statePiece} a variable holding the piece of state, the pointer points at
+ */
 export const useLayout = create(
   immer((set, get) => ({
     pageProps: {
@@ -14,7 +21,7 @@ export const useLayout = create(
           })
         },
         burgerOpen: false,
-        widget: null,
+        widgets: null,
       },
       nav: {
         opened: true,

@@ -1,9 +1,6 @@
-import { AppShell, Box } from "@mantine/core"
-import Link from "next/link"
-import { List, Title } from "@mantine/core"
+import { AppShell } from "@mantine/core"
 import AppHeader from "./AppHeader"
 import AppNavbar from "./Navigation/AppNavbar"
-import DefaultSection from "./Navigation/DefaultSection"
 
 /**
  * ## Layout = props => component

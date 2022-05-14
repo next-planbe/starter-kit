@@ -16,6 +16,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   widgetList: {
     display: "flex",
     justifyContent: "flex-end",
+    listStyle: "none",
   },
   brand: {
     textAlign: "center",
@@ -34,7 +35,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
  * @returns {React.Component} The header-component
  */
 
-const AppHeader = ({ id, brand, burgerOpen, clickBurger }) => {
+const AppHeader = ({ id, brand, burgerOpen, clickBurger, widgets }) => {
   const { classes } = useStyles()
 
   return (
@@ -47,11 +48,15 @@ const AppHeader = ({ id, brand, burgerOpen, clickBurger }) => {
           {brand}
         </Title>
       </Box>
-      <Box className={classes.headerElement}>
-        <List className={classes.widgetList}>
-          <List.Item>Widget 1</List.Item>
-        </List>
-      </Box>
+      {widgets && (
+        <Box className={classes.headerElement}>
+          <List className={classes.widgetList}>
+            {widgets.map((widget, index) => (
+              <List.Item key={`header-widget-${index}`}>{widget}</List.Item>
+            ))}
+          </List>
+        </Box>
+      )}
     </Header>
   )
 }

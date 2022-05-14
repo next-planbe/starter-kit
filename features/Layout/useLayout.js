@@ -61,5 +61,10 @@ export const useLayout = create(
         state.pageProps.header.burgerOpen = !get().pageProps.header.burgerOpen
       })
     },
+
+    setWidgets: widgets =>
+      set(state => {
+        state.pageProps.header.widgets = widgets
+      }),
   }))
 )

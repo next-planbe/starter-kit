@@ -12,7 +12,7 @@ import AppNavbar from "./Navigation/AppNavbar"
  * @returns {React.Component} Full App-View-Component. Best used in _app.js
  */
 
-const Layout = ({ children, nav, header }) => {
+const Layout = ({ children, nav, header, ...otherProps }) => {
   return (
     <AppShell
       header={
@@ -20,6 +20,7 @@ const Layout = ({ children, nav, header }) => {
           burgerOpen={header.burgerOpen}
           clickBurger={header.clickBurger}
           brand={header.brand}
+          widgets={header.widgets}
         />
       }
       navbar={

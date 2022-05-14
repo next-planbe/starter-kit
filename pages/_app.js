@@ -34,11 +34,11 @@ function MyApp({ Component, session, ...props }) {
           withNormalizeCSS
         >
           <NotificationsProvider>
-            <LayoutProvider>
-              <SessionProvider session={session}>
+            <SessionProvider>
+              <LayoutProvider>
                 <Component {...props} />
-              </SessionProvider>
-            </LayoutProvider>
+              </LayoutProvider>
+            </SessionProvider>
           </NotificationsProvider>
         </MantineProvider>
       </ColorSchemeProvider>
